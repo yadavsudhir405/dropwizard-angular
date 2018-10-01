@@ -9,7 +9,7 @@ server:
 webconfigs:
   - assetContextName: web
     webAssetConfig:
-      webDistroDirRelative: false
-      webDistroDir: /Users/sudhiry/yadavsudhir405/dropwizard-angular/app/web/dist
+      webDistroDirRelative: true
+      webDistroDir: ../web/dist
       webURIPath: /
     indexFile: index.html

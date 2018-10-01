@@ -13,11 +13,11 @@ import java.util.Optional;
 /**
  * Created by sudhiry on 9/30/18.
  */
-public class MyConfiguredBundle<T extends MultiBundleConfig> implements ConfiguredBundle<T> {
+public class WebAssetConfiguredBundle<T extends MultiBundleConfig> implements ConfiguredBundle<T> {
 
     private Class appClass;
 
-    public MyConfiguredBundle(Class appClass) {
+    public WebAssetConfiguredBundle(Class appClass) {
         this.appClass = appClass;
     }
 

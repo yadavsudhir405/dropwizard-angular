@@ -37,13 +37,16 @@ import static org.junit.Assert.assertEquals;
 public class DemoAppIT {
 
 
-    public static final DropwizardTestSupport<DemoConfiguration> SUPPORT =
-            new DropwizardTestSupport<DemoConfiguration>(DemoApp.class,
+    public static final DropwizardTestSupport<DemoConfiguration> SUPPORT = new DropwizardTestSupport<DemoConfiguration>(DemoApp.class,
                    "demo.yml");
 
     @BeforeClass
     public static void beforeClass() {
         SUPPORT.before();
+        initWebDriver();
+    }
+
+    private static void initWebDriver() {
         URL phantomjsURL = DemoAppIT.class.getClassLoader().getResource("webdriver/phantomjs");
         if(phantomjsURL == null){
             throw new RuntimeException("File Not Found, please keep phantomjs inside test/resources/webdriver");
@@ -51,20 +54,16 @@ public class DemoAppIT {
             String phantomjsPath = phantomjsURL.getPath();
             System.setProperty("phantomjs.binary.path", phantomjsPath);
         }
-
-
     }
-    
+
 
     @Test
     public void loginHandlerRedirectsAfterPost() throws MalformedURLException {
         String url = "http://localhost:8080/apps/web";
 
-
         WebDriver browser = new PhantomJSDriver();
         browser.get(url);
-        int sum = 0;
-        browser.get(url);
+
         assertEquals(browser.getTitle(),"My DreamApp");
 
     }

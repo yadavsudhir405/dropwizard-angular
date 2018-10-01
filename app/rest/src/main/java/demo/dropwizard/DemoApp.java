@@ -1,7 +1,7 @@
 package demo.dropwizard;
 
 import demo.dropwizard.config.DemoConfiguration;
-import demo.dropwizard.config.MyConfiguredBundle;
+import demo.dropwizard.config.WebAssetConfiguredBundle;
 import io.dropwizard.Application;
 import io.dropwizard.configuration.ResourceConfigurationSourceProvider;
 import io.dropwizard.servlets.assets.AssetServlet;
@@ -21,7 +21,7 @@ public class DemoApp extends Application<DemoConfiguration>  {
     }
     public void initialize(Bootstrap<DemoConfiguration> bootstrap) {
         bootstrap.setConfigurationSourceProvider(new ResourceConfigurationSourceProvider());
-        bootstrap.addBundle(new MyConfiguredBundle(this.getClass()));
+        bootstrap.addBundle(new WebAssetConfiguredBundle(this.getClass()));
 
     }
 

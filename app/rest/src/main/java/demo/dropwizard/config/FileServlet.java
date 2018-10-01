@@ -37,6 +37,7 @@ public class FileServlet extends HttpServlet {
     private static final long serialVersionUID = 6393345594784987908L;
     private static final CharMatcher SLASHES = CharMatcher.is('/');
     private static final MediaType DEFAULT_MEDIA_TYPE;
+    private static final String DEFAULT_FILE = "/index.html";
     private final String resourcePath;
     private final String uriPath;
     @Nullable
@@ -185,7 +186,7 @@ public class FileServlet extends HttpServlet {
             if(indexFile!= null){
                 requestedResource = new File(absoluteRequestedResourcePath+ "/"+ indexFile);
             }else {
-                requestedResource = new File(absoluteRequestedResourcePath+ "/index.html");
+                requestedResource = new File(absoluteRequestedResourcePath+ DEFAULT_FILE);
             }
         }
 
