@@ -176,8 +176,6 @@ public class FileServlet extends HttpServlet {
     private FileServlet.CachedAsset loadAsset(String key) throws URISyntaxException, IOException {
         checkArgument(key.startsWith(this.uriPath));
         String requestedResourcePath = SLASHES.trimFrom(key.substring(this.uriPath.length()));
-        //String absoluteRequestedResourcePath = SLASHES.trimFrom(this.resourcePath + requestedResourcePath);
-        //String requestedResourcePath = this.uriPath;
         String absoluteRequestedResourcePath = "/"+this.resourcePath + requestedResourcePath;
         FileInputStream fos = null;
         final byte[] file;
