@@ -1,0 +1,15 @@
+template: Hello, %s
+defaultName: Demo
+server:
+  type: simple
+  applicationContextPath: /apps
+  adminContextPath: /admin
+  rootPath: /api/*
+
+webconfigs:
+  - assetContextName: web
+    webAssetConfig:
+      webDistroDirRelative: false
+      webDistroDir: /Users/sudhiry/Downloads/app/web/dist
+      webURIPath: /
+    indexFile: index.html

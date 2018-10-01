@@ -1,0 +1,54 @@
+{
+  "name": "@sudhiris056/angualr6-demo-app",
+  "version": "1.0.0",
+  "description": "This project contains the boilerplate code for Angualr Application along with Webpack bundler configuration",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start-dev": "./node_modules/.bin/webpack-dev-server",
+    "build-dev": "./node_modules/.bin/webpack",
+    "build": "npm run build-dev",
+    "start": "npm run start-dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yadavsudhir405/angualar-webpack.git"
+  },
+  "author": "sudhiris056 <yadavsudhir405@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yadavsudhir405/angualar-webpack/issues"
+  },
+  "homepage": "https://github.com/yadavsudhir405/angualar-webpack#readme",
+  "devDependencies": {
+    "@angular/compiler-cli": "^6.1.9",
+    "@types/jquery": "^3.3.10",
+    "@types/node": "^10.11.3",
+    "angular-router-loader": "^0.8.5",
+    "angular2-template-loader": "^0.6.2",
+    "awesome-typescript-loader": "^5.2.1",
+    "html-loader": "^0.5.5",
+    "html-webpack-plugin": "^3.2.0",
+    "ngc-webpack": "^4.1.2",
+    "ts-loader": "^5.2.1",
+    "typescript": "^3.1.1",
+    "webpack": "^4.20.2",
+    "webpack-cli": "^3.1.1",
+    "webpack-dev-server": "^3.1.9",
+    "webpack-merge": "^4.1.4"
+  },
+  "dependencies": {
+    "@angular/animations": "^5.2.0",
+    "@angular/common": "^5.2.0",
+    "@angular/compiler": "^5.2.0",
+    "@angular/core": "^5.2.0",
+    "@angular/forms": "^5.2.0",
+    "@angular/http": "^5.2.0",
+    "@angular/platform-browser": "^5.2.0",
+    "@angular/platform-browser-dynamic": "^5.2.0",
+    "@angular/router": "^5.2.0",
+    "core-js": "^2.4.1",
+    "rxjs": "^5.5.6",
+    "zone.js": "^0.8.19"
+  }
+}
