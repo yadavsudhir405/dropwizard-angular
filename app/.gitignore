@@ -7,6 +7,7 @@ web/dist
 web/web.iml
 rest/target
 rest/rest.iml
+rest/src/test/resources/webdriver/phantomjs
 
 
 # Created by .ignore support plugin (hsz.mobi)
