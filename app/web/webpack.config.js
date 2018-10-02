@@ -1,5 +1,6 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const CopyWebpackPlugin = require("copy-webpack-plugin");
 
 
 const entry = {
@@ -22,14 +23,21 @@ const rules = [
         test:/\.html$/,
         use: 'html-loader',
         exclude: path.resolve(__dirname,"src/index.html")
-    }
+    },
+
 ];
 const plugins = [
     new HtmlWebpackPlugin({
         minify: false,
         template: path.resolve(__dirname, "src/index.html"),
         publicPath: "/apps/web"
-    })
+    }),
+    new CopyWebpackPlugin([
+        {
+            from: './src/assets',
+            to: 'assets'
+        }
+    ])
 ];
 const config = {
     "entry": entry,
@@ -45,7 +53,8 @@ const config = {
     devServer: {
         contentBase: path.join(__dirname, 'dist'),
         historyApiFallback: true,
-        port: 8081
+        port: 8081,
+        publicPath: '/apps/web'
     }
 };
 
