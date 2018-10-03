@@ -1,7 +1,7 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const CopyWebpackPlugin = require("copy-webpack-plugin");
-
+const CleanWebpackPlugin = require("clean-webpack-plugin");
+const BaseHrefWebpackPlugin = require("base-href-webpack-plugin");
 
 const entry = {
     app: "./src/index.ts",
@@ -9,8 +9,7 @@ const entry = {
 const  output = {
     filename: '[name].js',
     chunkFilename: '[id].chunk.js',
-    path: path.resolve(__dirname, 'dist'),
-
+    path: path.resolve(__dirname, 'dist')
 };
 const rules = [
     {
@@ -40,7 +39,9 @@ const plugins = [
     new HtmlWebpackPlugin({
         minify: false,
         template: path.resolve(__dirname, "src/index.html"),
-    })
+    }),
+    new BaseHrefWebpackPlugin.BaseHrefWebpackPlugin({baseHref: '/apps/web/'}),
+    new CleanWebpackPlugin("dist")
 ];
 const config = {
     "entry": entry,
@@ -57,6 +58,7 @@ const config = {
         contentBase: path.join(__dirname, 'dist'),
         historyApiFallback: true,
         port: 8081,
+        publicPath: "/apps/web"
     }
 };
 
