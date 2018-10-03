@@ -10,7 +10,6 @@ const  output = {
     filename: '[name].js',
     chunkFilename: '[id].chunk.js',
     path: path.resolve(__dirname, 'dist'),
-    publicPath: "/apps/web"
 
 };
 const rules = [
@@ -24,20 +23,24 @@ const rules = [
         use: 'html-loader',
         exclude: path.resolve(__dirname,"src/index.html")
     },
+    {
+        test:/\.(jpg|png)/,
+        use: [
+            {
+                loader: 'file-loader',
+                options: {
+                    name: '[path][name].[ext]'
+                }
+            }
+        ]
+    }
 
 ];
 const plugins = [
     new HtmlWebpackPlugin({
         minify: false,
         template: path.resolve(__dirname, "src/index.html"),
-        publicPath: "/apps/web"
-    }),
-    new CopyWebpackPlugin([
-        {
-            from: './src/assets',
-            to: 'assets'
-        }
-    ])
+    })
 ];
 const config = {
     "entry": entry,
@@ -54,7 +57,6 @@ const config = {
         contentBase: path.join(__dirname, 'dist'),
         historyApiFallback: true,
         port: 8081,
-        publicPath: '/apps/web'
     }
 };
 
